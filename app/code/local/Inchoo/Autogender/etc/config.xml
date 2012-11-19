@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Inchoo_Autogender>
+            <version>0.1.0</version>
+        </Inchoo_Autogender>
+    </modules>
+    <global>
+        <models>
+            <inchoo_autogender>
+                <class>Inchoo_Autogender_Model</class>
+            </inchoo_autogender>
+        </models>
+        <events>
+            <customer_register_success>
+                <observers>
+                    <inchoo_autogender_add_email>
+                        <class>inchoo_autogender/observer</class>
+                        <method>getGender</method>
+                    </inchoo_autogender_add_email>
+                </observers>
+            </customer_register_success>
+        </events>
+    </global>
+</config>
